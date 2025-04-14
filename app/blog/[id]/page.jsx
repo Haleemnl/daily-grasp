@@ -67,6 +67,7 @@ const page = async ({ params }) => {
 
                     <Link href={`/author/${post.author._id}`}>
                         <div className='flex items-center gap-3'>
+                            {/* author image */}
                             <Image
                                 src={urlFor(post.author.image).url()}
                                 width={40}
@@ -84,12 +85,12 @@ const page = async ({ params }) => {
                     {/* Title */}
                     <h1 className='mt-5 text-2xl font-bold'>{post.title}</h1>
                     {/* category */}
-                    <p className='mt-5'>{post.category}</p>
+                    <p className='mt-5 font-bold'>{post.category}</p>
 
                 </div>
 
                 {/* header image */}
-                <div className='w-[90%] mx-auto'>
+                {/* <div className='w-[90%] mx-auto'>
                     <Image
                         src={urlFor(post.image).url()}
                         alt={post.title || 'Blog post image'}
@@ -98,11 +99,11 @@ const page = async ({ params }) => {
                         className='mx-auto '
 
                     />
-                </div>
+                </div> */}
 
 
                 {/* Article text */}
-                <div className='break-all prose w-[80%] mx-auto mt-10'>
+                <div className='break-words px-6 md:px-4 prose max-w-3xl mx-auto mt-10'>
 
                     {Array.isArray(post.body) &&
 
@@ -112,9 +113,7 @@ const page = async ({ params }) => {
                         />
                     }
 
-
                 </div>
-
 
 
                 {/* Top Picks */}

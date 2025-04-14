@@ -73,7 +73,7 @@ bg-black/40 bg-blend-overlay ">
             />
           </div>
 
-          <h1 className='font-bold text-lg mt-2'>Recent <span className="bg-gradient-to-r from-[#747ed1] to-[#7f5191] text-transparent bg-clip-text">Posts</span></h1>
+          <h1 className='font-bold text-lg mt-2'>Top 5 Recent <span className="bg-gradient-to-r from-[#747ed1] to-[#7f5191] text-transparent bg-clip-text">Posts</span></h1>
 
           {posts.map((post) => (
             <AllPosts

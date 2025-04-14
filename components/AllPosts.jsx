@@ -7,26 +7,39 @@ const AllPosts = ({ post }) => {
     const { title, author, date, _id, image } = post
 
     return (
-        <div className=' w-full my-2 border rounded-lg shadow-lg px-2 flex items-center hover:scale-105'>
-
-            <Link href={`blog/${_id}`}>
-                <img
-                    src={urlFor(image).url()}
-                    alt="image"
-                    className='object-cover rounded-lg w-20 h-20'
-                />
+        <div className="w-full my-4 border rounded-xl shadow-md p-4 flex flex-col md:flex-row md:items-center gap-4 hover:shadow-lg transition-shadow duration-300">
+            <Link href={`blog/${_id}`} className="flex-shrink-0 w-full md:w-24">
+                {image && (
+                    <div className="w-full h-48 md:h-24 rounded-lg overflow-hidden">
+                        <img
+                            src={urlFor(image).url()}
+                            alt={title || "Blog post image"}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                )}
             </Link>
 
-            <div className='  p-2 mb-5 rounded-md'>
-                <Link href={`/author/${author._id}`}> <p className=' pt-5 font-serif'>By {author.name} | <span>{new Date(date).toLocaleDateString()}</span>.</p></Link>
-                <Link href={`blog/${_id}`}>
-                    <h1 className='font-bold items-start mt-2'>
-                        { }
+            <div className="flex-1 p-2">
+                <Link href={`/author/${author._id}`} className="hover:underline">
+                    <p className="text-sm text-gray-600 font-serif">
+                        By {author.name} |{" "}
+                        <time dateTime={date} className="font-sans">
+                            {new Date(date).toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })}
+                        </time>
+                    </p>
+                </Link>
+
+                <Link href={`blog/${_id}`} className="hover:underline">
+                    <h1 className="text-base md:text-xl font-bold mt-2 line-clamp-2">
                         {title}
                     </h1>
                 </Link>
             </div>
-
         </div>
     )
 }
