@@ -90,7 +90,7 @@ const page = async ({ params }) => {
 
                             <Link href={`blog/${post._id}`}>
                                 <h2 className='font-semibold'>{post.category}</h2>
-                                <h1 className='font-bold text-2xl my-2'>{post.title}</h1>
+                                <h1 className='font-bold text-xl my-2 line-clamp-2'>{post.title}</h1>
                             </Link>
 
                             <p className='font-serif'>
@@ -98,7 +98,7 @@ const page = async ({ params }) => {
                             </p>
 
                             <Link href={`blog/${post._id}`}>
-                                <p className='my-2'>{post.description}</p>
+                                <p className='my-2 line-clamp-4'>{post.description}</p>
                             </Link>
                         </div>
                     </div>
