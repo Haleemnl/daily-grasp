@@ -88,7 +88,7 @@ const page = async ({ params }) => {
 
                         <div className='border p-5 rounded-xl shadow-lg'>
 
-                            <Link href={`blog/${post._id}`}>
+                            <Link href={`/blog/${post._id}`}>
                                 <h2 className='font-semibold'>{post.category}</h2>
                                 <h1 className='font-bold text-xl my-2 line-clamp-2'>{post.title}</h1>
                             </Link>
@@ -97,7 +97,7 @@ const page = async ({ params }) => {
                                 By {author.name} | {new Date(post.date).toLocaleDateString()}
                             </p>
 
-                            <Link href={`blog/${post._id}`}>
+                            <Link href={`/blog/${post._id}`}>
                                 <p className='my-2 line-clamp-4'>{post.description}</p>
                             </Link>
                         </div>
